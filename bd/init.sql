@@ -54,14 +54,11 @@ CREATE TABLE apontamentos (
     FOREIGN KEY (tecnico_id) REFERENCES usuarios(id)
 );
 
--- Criação da tabela `pool_tecnico_`
-CREATE TABLE pool_tecnico_ (
+-- Criação da tabela `pool_tecnico`
+CREATE TABLE pool_tecnico (
     id INT AUTO_INCREMENT PRIMARY KEY,
     id_pool INT,
     id_tecnico INT,
-    status ENUM('ativo', 'inativo') DEFAULT 'ativo',
-    criado_em TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
-    atualizado_em TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
     FOREIGN KEY (id_pool) REFERENCES pool(id),
     FOREIGN KEY (id_tecnico) REFERENCES usuarios(id)
 );
