@@ -85,6 +85,7 @@ A estrutura de diretórios do projeto segue a organização padrão do Next.js, 
 /public              # Arquivos públicos estáticos
 /app               # Páginas do frontend (Next.js)
   /usuario               # paginas do usuário comum 
+  /admin               # paginas do administrador 
   /tecnico               # paginas do tecnico
 /components          # Componentes reutilizáveis da UI
 /utils               # Funções utilitárias
