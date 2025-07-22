@@ -21,7 +21,7 @@ try {
   app.use(express.json());
   
   app.use(session({
-    secret: process.env.SESSION_SECRET || 'fallback-secret',
+    secret: 'sJYMmuCB2Z187XneUuaOVYTVUlxEOb2K94tFZy370HjOY7T7aiCKvwhNQpQBYL9e',
     resave: false,
     saveUninitialized: false,
     cookie: { secure: false }
