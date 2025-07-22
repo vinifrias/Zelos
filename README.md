@@ -1,5 +1,5 @@
-
 # Zelos
+
 ## Sistema de Chamados - Escola SENAI Armando de Arruda Pereira
 
 Este é um projeto de **sistema de chamados** para a **Escola SENAI Armando de Arruda Pereira**, desenvolvido para gerenciar solicitações de manutenção, apoio técnico e outros serviços para itens identificados pelo número de patrimônio da escola. O sistema foi construído com **Next.js**, **Node.js** e **MySQL**.
@@ -12,7 +12,7 @@ Este é um projeto de **sistema de chamados** para a **Escola SENAI Armando de A
 4. [Estrutura de Diretórios](#estrutura-de-diretórios)
 5. [Banco de Dados](#banco-de-dados)
 6. [Desenvolvimento](#desenvolvimento)
-7. [Contribuição](#contribuição)
+7. [Integração AD](#integração-ad)
 8. [Licença](#licença)
 
 ## Sobre o Projeto
@@ -84,8 +84,8 @@ A estrutura de diretórios do projeto segue a organização padrão do Next.js, 
 ```
 /public              # Arquivos públicos estáticos
 /app               # Páginas do frontend (Next.js)
-  /usuario               # paginas do usuário comum 
-  /admin               # paginas do administrador 
+  /usuario               # paginas do usuário comum
+  /admin               # paginas do administrador
   /tecnico               # paginas do tecnico
 /components          # Componentes reutilizáveis da UI
 /utils               # Funções utilitárias
@@ -104,6 +104,19 @@ O banco de dados utiliza o **MySQL** com a seguinte estrutura:
 ## Desenvolvimento
 
 Este projeto segue boas práticas de desenvolvimento utilizando o framework **Next.js** para o frontend e **Node.js/Express** para o backend. O banco de dados MySQL é acessado utilizando o **MySQL2**, proporcionando uma maneira eficiente e segura de interagir com o banco.
+
+## Integração AD
+
+O backend já está integrado com o AD. Autenticação de usuário é feita via o seguinte endpoint "/auth/login" com o JSON:
+
+```json
+{
+  "username": "",
+  "password": ""
+}
+```
+
+Este endpoint só funciona via rede cabeada ou wifi B07. Caso precise implementar funcionalidades no endpoint de autenticação, evite remover ou alterar o código existente. Caso o faça, teste e valide.
 
 ## Licença
 
