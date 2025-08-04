@@ -6,8 +6,8 @@ const ldapOptions = {
   server: {
     url: 'ldap://10.189.87.7:389',
     bindDN: 'cn=script,ou=Funcionarios,ou=Usuarios123,dc=educ123,dc=sp,dc=senai,dc=br',
-    bindCredentials: '7GFGOy4ATCiqW9c86eStgCe0RA9BgA',
-    searchBase: 'ou=Funcionarios,ou=Usuarios123,dc=educ123,dc=sp,dc=senai,dc=br',
+    bindCredentials: '', // tem que preencher, pedir para adm
+    searchBase: 'ou=Alunos,ou=Usuarios123,dc=educ123,dc=sp,dc=senai,dc=br', //se aluno ou=Alunos se funcionario ou=Funcionarios
     searchFilter: '(sAMAccountName={{username}})'
   }
 };
