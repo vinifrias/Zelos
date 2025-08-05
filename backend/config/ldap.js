@@ -5,9 +5,9 @@ import LdapStrategy from 'passport-ldapauth';
 const ldapOptions = {
   server: {
     url: 'ldap://10.189.87.7:389',
-    bindDN: 'cn=script,ou=Funcionarios,ou=Usuarios123,dc=educ123,dc=sp,dc=senai,dc=br',
+    bindDN: '', // tem que preencher, pedir para adm
     bindCredentials: '', // tem que preencher, pedir para adm
-    searchBase: 'ou=Alunos,ou=Usuarios123,dc=educ123,dc=sp,dc=senai,dc=br', //se aluno ou=Alunos se funcionario ou=Funcionarios
+    searchBase: '', // tem que preencher, pedir para adm. se aluno ou=Alunos se funcionario ou=Funcionarios
     searchFilter: '(sAMAccountName={{username}})'
   }
 };
