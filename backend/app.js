@@ -4,6 +4,7 @@ import session from 'express-session';
 import dotenv from 'dotenv';
 import authRotas from './routes/authRotas.js';
 import passport from './config/ldap.js';
+import chamadosRotas from './routes/chamadosRotas.js';
 
 // 1. Carrega variáveis de ambiente PRIMEIRO
 dotenv.config();
@@ -19,6 +20,10 @@ try {
     credentials: true
   }));
   app.use(express.json());
+  app.use((req, res, next) => {
+    console.log("Body recebido:", req.body); // Verifique se o JSON está chegando
+    next();
+  });
   
   app.use(session({
     secret: 'sJYMmuCB2Z187XneUuaOVYTVUlxEOb2K94tFZy370HjOY7T7aiCKvwhNQpQBYL9e',
@@ -41,6 +46,8 @@ try {
 
 // 5. Rotas
 app.use('/auth', authRotas);
+
+app.use('/chamados', chamadosRotas);
 
 app.get('/health', (req, res) => {
   res.status(200).json({ status: 'online' });

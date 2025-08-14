@@ -4,8 +4,8 @@ import bcrypt from 'bcryptjs';
 const pool = mysql.createPool({
     host: 'localhost',
     user: 'root',
-    password: 'senai@123',
-    database: 'zelo', 
+    password: '',
+    database: 'zelos_senai', 
     waitForConnections: true,
     connectionLimit: 10,
     queueLimit: 0
@@ -109,13 +109,14 @@ async function deleteRecord(table, where) {
 }
 
 async function compare(senha, hash) {
-    try {
-        // Compare a senha com o hash usando bcrypt
-        return await bcrypt.compare(senha, hash);
-    } catch (error) {
-        console.error('Erro ao comparar a senha com o hash:', error);
-        return false; // Em caso de erro, retorne falso para indicar que a senha não corresponde
-    }
-}
+    // Debug: mostre os valores que estão sendo comparados
+    console.log('Comparando:', {
+      senhaRecebida: senha,
+      hashArmazenado: hash,
+      hashType: typeof hash
+    });
+    
+    return await bcrypt.compare(senha, hash);
+  }
 
 export { create, readAll, read, update, deleteRecord, compare };
